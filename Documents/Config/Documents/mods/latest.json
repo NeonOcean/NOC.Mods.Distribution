@@ -1,0 +1,17 @@
+{
+	"File Extension": "json",
+	
+	"Values": {
+		"Mod Namespace": "NeonOcean.Main"
+	},
+
+	"Scripts": {
+		"Content": {
+			"Module": "Site_NeonOcean_NOC_Mods_Distribution.Scripts.Latest",
+			"Function": "GetLatestText",
+			"Inputs": []
+		}
+	},
+
+	"Template Config": "Latest.json"
+}

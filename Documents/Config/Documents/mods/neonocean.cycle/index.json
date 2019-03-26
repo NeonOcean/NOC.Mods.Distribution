@@ -1,0 +1,24 @@
+{
+	"File Extension": "html",
+
+	"Values": {
+		"Title": "Cycle - Versions",
+		
+		"Base Path": "../..",
+		
+		"Mod Namespace": "NeonOcean.Cycle",
+		"Documentation Link": "https://documentation.neonoceancreations.com/cycle"
+	},
+
+	"Scripts": {
+		"Index": {
+			"Module": "Site_NeonOcean_NOC_Mods_Distribution.Scripts.ModIndex",
+			"Function": "BuildModIndex",
+			"Inputs": [
+				"Mod Namespace"
+			]
+		}
+	},
+
+	"Template Config": "ModIndex.json"
+}

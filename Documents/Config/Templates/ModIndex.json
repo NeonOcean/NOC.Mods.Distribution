@@ -1,0 +1,16 @@
+{
+	"Document": {
+		"Template": "ModIndex.html",
+
+		"Formatting": {
+			"Title": "Title",
+
+			"Base Path": "Base Path",
+			
+			"ModNamespace": "Mod Namespace",
+			"DocumentationLink": "Documentation Link",
+
+			"Index": "Index"
+		}
+	}
+}

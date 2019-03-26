@@ -1,0 +1,16 @@
+{
+	"Identifier": "332211f8-3347-4c02-aaf2-e0f44f49392f",
+	"Targets": [ 
+		"S4"
+	],
+	"Targets Type": "Whitelist",
+	"Mods": [
+		"NeonOcean.Debug"
+	],
+	"Mods Type": "Whitelist",
+	"Rating": "Normal",
+	"Link": "https://www.google.com",
+	"S4 Title": "NeonOcean - Showing Example Promotion",
+	"S4 Text": "This is a example promotion.",
+	"S4 Link Button": "Open example link"
+}

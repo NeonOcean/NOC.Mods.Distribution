@@ -1,11 +1,11 @@
 {
-	"neonocean.debug": {
+	"NeonOcean.Debug": {
 		"Release": "1.1.0"
 	},
-	"neonocean.main": {
+	"NeonOcean.Main": {
 		"Release": "1.1.0"
 	},
-	"neonocean.order": {
+	"NeonOcean.Order": {
 		"Release": "1.1.0"
 	}
 }

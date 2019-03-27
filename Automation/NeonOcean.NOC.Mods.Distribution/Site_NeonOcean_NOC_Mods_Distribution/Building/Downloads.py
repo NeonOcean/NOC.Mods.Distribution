@@ -40,12 +40,12 @@ def _BuildModDownloads () -> None:
 		downloadSourcesAgeTemplate = downloadTemplateFile.read()
 
 	for modNamespace, modVersions in Distribution.Releases.items():  # type: str, typing.List[Distribution.ModVersion]
-		modBuildPath = os.path.join(Paths.DownloadsBuildPath, "Mods", modNamespace)  # type: str
+		modBuildPath = os.path.join(Paths.DownloadsBuildPath, "mods", modNamespace.lower())  # type: str
 
 		licensePath = os.path.join(modBuildPath.replace(Paths.DownloadsBuildPath + os.path.sep, ""), _licenseName).replace("\\", "/")  # type: str
 		licensePath = licensePath.replace("\\", "/")
 
-		with open(os.path.join(Paths.DownloadsSourcesPath, "Mods", modNamespace + ".json")) as modInformationFile:
+		with open(os.path.join(Paths.DownloadsSourcesPath, "mods", modNamespace + ".json")) as modInformationFile:
 			modInformation = decoder.JSONDecoder().decode(modInformationFile.read())  # type: dict
 
 		if not modInformation["Mod"]["Age"]:
@@ -116,7 +116,7 @@ def _BuildModDownloads () -> None:
 		licensePath = os.path.join(modBuildPath.replace(Paths.DownloadsBuildPath + os.path.sep, ""), _licenseName).replace("\\", "/")  # type: str
 		licensePath = licensePath.replace("\\", "/")
 
-		with open(os.path.join(Paths.DownloadsSourcesPath, "Mods", modNamespace + ".json")) as modInformationFile:
+		with open(os.path.join(Paths.DownloadsSourcesPath, "mods", modNamespace + ".json")) as modInformationFile:
 			modInformation = decoder.JSONDecoder().decode(modInformationFile.read())  # type: dict
 
 		if not modInformation["Mod"]["Age"]:

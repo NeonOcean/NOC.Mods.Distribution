@@ -67,7 +67,7 @@ def _BuildModDownloads () -> None:
 		latestInstallerFilePath = os.path.join(_releasesURL, modLatestVersion.InstallerFilePath).replace("\\", "/")  # type: str
 		latestFilesPath = os.path.join(modBuildPath, "files.html")  # type: str
 		latestFilesRelativePath = os.path.relpath(latestFilesPath, Paths.DownloadsBuildPath)  # type: str
-		latestFilesFilePath = os.path.join(_releasesURL, modLatestVersion.SourcesFilePath).replace("\\", "/")  # type: str
+		latestFilesFilePath = os.path.join(_releasesURL, modLatestVersion.FilesFilePath).replace("\\", "/")  # type: str
 		latestSourcesPath = os.path.join(modBuildPath, "sources.html")  # type: str
 		latestSourcesFilePath = os.path.join(_releasesURL, modLatestVersion.SourcesFilePath).replace("\\", "/")  # type: str
 

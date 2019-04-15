@@ -2,6 +2,8 @@ import typing
 from importlib import util
 from json import encoder
 
+_showedWarning = False  # type: bool
+
 def GetLatestText () -> str:
 	automationModule = util.find_spec("Automation")
 
@@ -70,5 +72,3 @@ def GetLatestPreviewVersion (namespace: str) -> str:
 		return ""
 
 	return latestVersion.Version
-
-_showedWarning = False  # type: bool

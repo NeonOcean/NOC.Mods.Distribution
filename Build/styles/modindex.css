@@ -1,10 +1,14 @@
+*, *::before , *::after {
+	box-sizing: border-box;
+}
+
 html, body {
 	width: 1250px;
 	height: 100%;
 	margin: 0px;
 }
 
-table, th, tr{
+table, td, tr{
 	padding: 0px;
 	margin: 0px;
 	
@@ -12,7 +16,7 @@ table, th, tr{
 	border-spacing: 0;
 }
 
-th {
+td {
 	font-weight: normal;
 }
 
@@ -76,20 +80,12 @@ div.Index_Header_Container {
 	width: 100%;
 	height: 25px;
 	
-	border-top-width: 1px;
-	border-top-style: solid;
-	border-top-color: gainsboro;
-	
-	border-bottom-width: 1px;
-	border-bottom-style: solid;
-	border-bottom-color: gainsboro;
-		
 	padding: 0px 50px 0px 50px;
+	
 	box-sizing: border-box;
 }
 
-tr.Index_Header_Entry th {
-	text-align: center;
+tr.Index_Header_Entry td {
 	font-weight: bold;
 }
 
@@ -119,7 +115,7 @@ table.Index_Header, table.Index {
 	height: auto;
 }
 
-table.Index tr:nth-child(even) {
+table.Index tr:ntd-child(even) {
 	background-color: lavender;
 }
 
@@ -128,7 +124,17 @@ tr.Index_Header_Entry , tr.Index_Entry {
 	height: 25px;
 }
 
-tr.Index_Header_Entry th, tr.Index_Entry  th {
+tr.Index_Header_Entry {
+	border-top-width: 1px;
+	border-top-style: solid;
+	border-top-color: gainsboro;
+	
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: gainsboro;
+}
+
+tr.Index_Header_Entry td, tr.Index_Entry  td {
 	height: inherit;
 	
 	border-right-width: 1px;
@@ -138,29 +144,31 @@ tr.Index_Header_Entry th, tr.Index_Entry  th {
 	border-left-width: 1px;
 	border-left-style: solid;
 	border-left-color: gainsboro;
+	
+	text-align: center;
 }
 
-th.Index_Header_Version, th.Index_Entry_Version {
+td.Index_Header_Version, td.Index_Entry_Version {
 	width: 25%;
 }
 
-th.Index_Header_Installer, th.Index_Entry_Installer {
+td.Index_Header_Installer, td.Index_Entry_Installer {
 	width: 15%;
 }
 
-th.Index_Header_Files, th.Index_Entry_Files {
+td.Index_Header_Files, td.Index_Entry_Files {
 	width: 15%;
 }
 
-th.Index_Header_Sources, th.Index_Entry_Sources {
+td.Index_Header_Sources, td.Index_Entry_Sources {
 	width: 15%;
 }
 
-th.Index_Header_Game_Version, th.Index_Entry_Game_Version {
+td.Index_Header_Game_Version, td.Index_Entry_Game_Version {
 	width: 15%;
 }
 
-th.Index_Header_Release_Date, th.Index_Entry_Release_Date {
+td.Index_Header_Release_Date, td.Index_Entry_Release_Date {
 	width: 15%;
 }
 

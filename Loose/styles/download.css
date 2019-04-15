@@ -53,6 +53,7 @@ div.Box {
 	
 	border-style: solid;
 	border-width: 2px;
+	border-radius: 4px;
 	border-color: gainsboro;
 	
 	box-sizing: border-box;
@@ -133,13 +134,15 @@ div.Download_Button {
 	
 	border-style: solid;
 	border-width: 2px;
-	border-color: gainsboro;
+	border-radius: 4px;
+	border-color: mistyrose;
 
 	box-sizing: border-box;
 	
 	position: absolute;
 	
 	line-height: 38px;
+	cursor: pointer;
 	
 	background-color: mistyrose;
 }
@@ -150,7 +153,7 @@ a.Download_Link {
 	
 	position: absolute;
 	
-	color: dimgray;
+	color: black;
 	
 	font-family: sans-serif;
 	

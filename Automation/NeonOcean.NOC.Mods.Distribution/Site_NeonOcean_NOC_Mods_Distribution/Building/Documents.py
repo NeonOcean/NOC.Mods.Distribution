@@ -5,11 +5,7 @@ from importlib import util
 from json import decoder
 
 from Site_NeonOcean_NOC_Mods_Distribution import Paths
-from Site_NeonOcean_NOC_Mods_Distribution.Tools import IO
-
-class FormattingDict(dict):
-	def __missing__ (self, key):
-		return "{" + key + "}"
+from Site_NeonOcean_NOC_Mods_Distribution.Tools import IO, Formatting
 
 def BuildDocuments () -> bool:
 	IO.ClearDirectory(Paths.DocumentsBuildPath)
@@ -50,12 +46,12 @@ def _ReadDocumentConfig (documentConfigFilePath: str) -> typing.Tuple[str, str]:
 	with open(documentConfigFilePath) as documentConfigFile:
 		documentConfig = decoder.JSONDecoder().decode(documentConfigFile.read())  # type: dict
 
-	documentTemplateConfigFilePath = os.path.join(Paths.DocumentsConfigTemplatesPath, documentConfig["Template Config"])  # type: str
+	documentTemplateConfigFilePath = os.path.join(Paths.DocumentsConfigTemplatesPath, documentConfig["TemplateConfig"])  # type: str
 
 	with open(documentTemplateConfigFilePath) as documentTemplateConfigFile:
 		documentTemplateConfig = decoder.JSONDecoder().decode(documentTemplateConfigFile.read())  # type: dict
 
-	documentFileExtension = documentConfig["File Extension"]  # type: str
+	documentFileExtension = documentConfig["FileExtension"]  # type: str
 
 	documentRelativeFilePath = os.path.splitext(documentConfigFilePath.replace(Paths.DocumentsConfigDocumentsPath + os.path.sep, ""))[0] + "." + documentFileExtension  # type: str
 	documentRelativeFilePath.replace(os.path.altsep, os.path.sep)
@@ -63,11 +59,11 @@ def _ReadDocumentConfig (documentConfigFilePath: str) -> typing.Tuple[str, str]:
 	documentFilePath = os.path.join(Paths.DocumentsBuildPath, documentRelativeFilePath)
 
 	documentAdditionalValues = {
-		"Document Path": documentRelativeFilePath
+		"DocumentPath": documentRelativeFilePath
 	}
 
 	documentValues = _ReadValues(documentConfig, documentAdditionalValues)  # type: dict
-	documentValues["Document Path"] = documentRelativeFilePath
+	documentValues["DocumentPath"] = documentRelativeFilePath
 
 	documentText = _ReadDocument(documentValues, documentTemplateConfig["Document"])  # type: str
 
@@ -131,7 +127,7 @@ def _ReadDocument (documentValues: dict, documentDictionary: dict) -> str:
 	if formattingDictionary is None:
 		documentText = template
 	else:
-		formattingDictionary = FormattingDict(formattingDictionary)  # type: FormattingDict
+		formattingDictionary = dict(formattingDictionary)  # type: typing.Dict[str, str]
 
 		for formattingKey, formattingValue in formattingDictionary.items():  # type: str, object
 			if isinstance(formattingValue, str):
@@ -161,39 +157,6 @@ def _ReadDocument (documentValues: dict, documentDictionary: dict) -> str:
 			elif isinstance(formattingValue, dict):
 				formattingDictionary[formattingKey] = _ReadDocument(documentValues, formattingValue)
 
-			for keyIndex in _AllIndexes(template, "{" + formattingKey + "}"):
-				indexPreviousWhitespaces = _PreviousWhitespaces(template, keyIndex)  # type: str
-				formattingDictionary[formattingKey] = formattingDictionary[formattingKey].replace("\n", "\n" + indexPreviousWhitespaces)
-
-		documentText = template.format_map(formattingDictionary)
+		documentText = Formatting.FormatDictionary(template, formattingDictionary)
 
 	return documentText
-
-def _AllIndexes (text: str, target: str) -> list:
-	indexes = list()  # type: list
-	currentPosition = 0  # type: int
-
-	while True:
-		currentIndex = text.find(target, currentPosition)
-
-		if currentIndex != -1:
-			indexes.append(currentIndex)
-			currentPosition = currentIndex + len(target)
-		else:
-			break
-
-	return indexes
-
-def _PreviousWhitespaces (text: str, position: int) -> str:
-	position -= 1  # type: int
-	whitespaces = ""  # type: str
-
-	while position > -1 and not (text[position] == "\n" or text[position] == "\r"):
-		if text[position] != "\t" and text[position] != " ":
-			whitespaces = ""
-		else:
-			whitespaces += text[position]
-
-		position -= 1
-
-	return whitespaces

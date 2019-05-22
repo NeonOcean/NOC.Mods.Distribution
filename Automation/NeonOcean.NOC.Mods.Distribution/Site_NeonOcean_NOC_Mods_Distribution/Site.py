@@ -4,6 +4,9 @@ from json import decoder
 
 from Site_NeonOcean_NOC_Mods_Distribution import Paths
 
+_site = None  # type: Site
+_siteData = None  # type: typing.Dict[str, typing.Any]
+
 class Site:
 	def __init__ (self, informationDictionary: typing.Dict[str, typing.Any]):
 		self.Namespace = informationDictionary["Namespace"]  # type: str
@@ -14,8 +17,11 @@ class Site:
 def GetCurrentSite () -> Site:
 	return _site
 
+def GetSiteData () -> typing.Dict[str, typing.Any]:
+	return _siteData
+
 def _Setup () -> None:
-	global _site
+	global _site, _siteData
 
 	informationFilePath = os.path.join(os.path.dirname(os.path.dirname(os.path.normpath(__file__))), "Site.json")  # type: str
 
@@ -25,12 +31,14 @@ def _Setup () -> None:
 	except Exception as e:
 		raise Exception("Failed to read site information for '" + informationFilePath + "'. \n") from e
 
-def GetGithubName () -> str:
-	return GetCurrentSite().GithubName
+	_siteData = {
+		"Namespace": GetCurrentSite().Namespace,
+		"Domain": GetCurrentSite().Domain,
 
-def GetBuildPath () -> str:
-	return Paths.BuildPath
+		"GithubName": GetCurrentSite().GithubName,
 
-_site = None  # type: Site
+		"BuildPath": Paths.BuildPath,
+		"HostingPath": Paths.BuildPath
+	}
 
 _Setup()

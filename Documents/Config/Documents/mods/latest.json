@@ -1,8 +1,8 @@
 {
-	"File Extension": "json",
+	"FileExtension": "json",
 	
 	"Values": {
-		"Mod Namespace": "NeonOcean.Main"
+		"ModNamespace": "NeonOcean.Main"
 	},
 
 	"Scripts": {
@@ -13,5 +13,5 @@
 		}
 	},
 
-	"Template Config": "Latest.json"
+	"TemplateConfig": "Latest.json"
 }

@@ -5,10 +5,9 @@
 		"Formatting": {
 			"Title": "Title",
 
-			"Base Path": "Base Path",
+			"BasePath": "BasePath",
 			
-			"ModNamespace": "Mod Namespace",
-			"DocumentationLink": "Documentation Link",
+			"ModName": "ModName",
 
 			"Index": "Index"
 		}

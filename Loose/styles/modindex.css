@@ -3,9 +3,9 @@
 }
 
 html, body {
-	width: 1250px;
-	height: 100%;
 	margin: 0px;
+	
+	background-color: ghostwhite;
 }
 
 table, td, tr{
@@ -29,35 +29,27 @@ a:hover {
 }
 
 div.Document {
-	width: inherit;
-	height: inherit;
-}
-
-div.Header_Container {
-	width: inherit;
-	height: 150px;
+	width: 80%;
+	min-width: 1000px;
 	
-	position: fixed;
+	padding: 25px;
 	
-	z-index: 50;
-}
-
-div.Header {
-	width: inherit;
-	height: inherit;
+	margin-top: 50px;
+	margin-bottom: 50px;
+	
+	margin-right: 10%;
+	margin-left: 10%;
+	
+	border-style: solid;
+	border-width: 2px;
+	border-color: gainsboro;
+	
+	border-radius: 4px;
 	
 	background-color: white;
 }
 
-div.Header_Main {
-	width: inherit;
-	height: 125px;
-	
-	padding: 0px 50px 0px 50px;
-	box-sizing: border-box;
-}
-
-div.Mod_Namespace {
+div.Mod_Name {
 	line-height: 75px;
 	
 	padding: 25px 0px;
@@ -66,14 +58,6 @@ div.Mod_Namespace {
 	
 	font-size: 32px;
 	font-weight: bold;
-}
-
-a.Documentation_Link {
-	line-height: 75px;
-	
-	padding: 25px 0px;
-	
-	float: right;
 }
 
 div.Index_Header_Container {
@@ -89,20 +73,8 @@ tr.Index_Header_Entry td {
 	font-weight: bold;
 }
 
-div.Content_Container {
-	width: inherit;
-	height: inherit;
-	
-	min-width: 1000px;
-	min-height: 800px;
-}
-
-div.Content {
-	width: inherit;
-	height: inherit;
-	
+div.Content {	
 	padding: 150px 50px 0px 50px;
-	box-sizing: border-box;
 }
 
 div.Index_Container {
@@ -110,13 +82,17 @@ div.Index_Container {
 	height: auto;
 }
 
-table.Index_Header, table.Index {
+table.Index {
 	width: 100%;
 	height: auto;
+	
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: gainsboro;
 }
 
-table.Index tr:ntd-child(even) {
-	background-color: lavender;
+table.Index tr:nth-child(even) {
+	background-color: aliceblue;
 }
 
 tr.Index_Header_Entry , tr.Index_Entry {

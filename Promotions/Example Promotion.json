@@ -3,14 +3,14 @@
 	"Targets": [ 
 		"S4"
 	],
-	"Targets Type": "Whitelist",
+	"TargetsType": "Whitelist",
 	"Mods": [
 		"NeonOcean.Debug"
 	],
-	"Mods Type": "Whitelist",
+	"ModsType": "Whitelist",
 	"Rating": "Normal",
 	"Link": "https://www.google.com",
-	"S4 Title": "NeonOcean - Showing Example Promotion",
-	"S4 Text": "This is a example promotion.",
-	"S4 Link Button": "Open example link"
+	"S4Title": "NeonOcean - Showing Example Promotion",
+	"S4Text": "This is a example promotion.",
+	"S4LinkButton": "Open example link"
 }

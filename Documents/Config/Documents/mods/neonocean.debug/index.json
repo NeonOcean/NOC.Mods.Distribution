@@ -1,13 +1,13 @@
 {
-	"File Extension": "html",
+	"FileExtension": "html",
 
 	"Values": {
 		"Title": "Debug - Versions",
 		
-		"Base Path": "../..",
+		"BasePath": "../..",
 		
-		"Mod Namespace": "NeonOcean.Debug",
-		"Documentation Link": "https://doc.mods.neonoceancreations.com/debug"
+		"ModName": "Debug",
+		"ModNamespace": "NeonOcean.Debug"
 	},
 
 	"Scripts": {
@@ -15,10 +15,10 @@
 			"Module": "Site_NeonOcean_NOC_Mods_Distribution.Scripts.ModIndex",
 			"Function": "BuildModIndex",
 			"Inputs": [
-				"Mod Namespace"
+				"ModNamespace"
 			]
 		}
 	},
 
-	"Template Config": "ModIndex.json"
+	"TemplateConfig": "ModIndex.json"
 }

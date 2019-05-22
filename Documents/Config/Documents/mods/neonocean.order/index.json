@@ -1,13 +1,13 @@
 {
-	"File Extension": "html",
+	"FileExtension": "html",
 
 	"Values": {
 		"Title": "Order - Versions",
 		
-		"Base Path": "../..",
+		"BasePath": "../..",
 		
-		"Mod Namespace": "NeonOcean.Order",
-		"Documentation Link": "https://doc.mods.neonoceancreations.com/order"
+		"ModName": "Order",
+		"ModNamespace": "NeonOcean.Order"
 	},
 
 	"Scripts": {
@@ -15,10 +15,10 @@
 			"Module": "Site_NeonOcean_NOC_Mods_Distribution.Scripts.ModIndex",
 			"Function": "BuildModIndex",
 			"Inputs": [
-				"Mod Namespace"
+				"ModNamespace"
 			]
 		}
 	},
 
-	"Template Config": "ModIndex.json"
+	"TemplateConfig": "ModIndex.json"
 }

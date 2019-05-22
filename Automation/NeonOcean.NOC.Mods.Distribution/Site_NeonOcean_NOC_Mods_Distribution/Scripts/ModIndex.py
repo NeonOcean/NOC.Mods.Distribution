@@ -31,13 +31,13 @@ def BuildModIndex (modNamespace: str) -> str:
 
 		versionFormatting["VersionNumber"] = modVersion.Version
 
-		versionFormatting["InstallerLink"] = "mods/" + modNamespace + "/" + modVersion.Version + "/installer.html"
-		versionFormatting["FilesLink"] =  "mods/" + modNamespace + "/" + modVersion.Version + "/files.html"
-		versionFormatting["SourcesLink"] =  "mods/" + modNamespace + "/" + modVersion.Version + "/sources.html"
+		versionFormatting["InstallerLink"] = "mods/" + modNamespace + "/" + modVersion.Version + "/installer"
+		versionFormatting["FilesLink"] =  "mods/" + modNamespace + "/" + modVersion.Version + "/files"
+		versionFormatting["SourcesLink"] =  "mods/" + modNamespace + "/" + modVersion.Version + "/sources"
 
 
 		versionFormatting["GameVersionNumber"] = modVersion.GameVersion
-		versionFormatting["ReleaseDate"] = modVersion.ReleaseDate
+		versionFormatting["ReleaseDate"] = modVersion.ReleaseDateObject.strftime("%B %d, %Y")
 
 		if modVersionsText == "":
 			modVersionsText = versionTemplate.format_map(versionFormatting)

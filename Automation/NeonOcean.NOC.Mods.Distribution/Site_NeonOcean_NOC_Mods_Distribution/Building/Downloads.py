@@ -68,7 +68,7 @@ def _BuildModDownloads () -> None:
 		if modName is None:
 			modName = modNamespace
 
-		latestBasePath = os.path.relpath(Paths.DownloadsBuildPath, modBuildPath).replace("\\", "/")  # type: str
+		latestBasePath = os.path.relpath(Paths.DownloadsBuildPath, modBuildPath).replace("\\", "/") + "/.."  # type: str
 		latestInstallerPath = os.path.join(modBuildPath, "installer/index.html")  # type: str
 		latestInstallerURL = modLatestVersion.InstallerURL  # type: str
 		latestFilesPath = os.path.join(modBuildPath, "files/index.html")  # type: str
@@ -93,7 +93,7 @@ def _BuildModDownloads () -> None:
 		for modVersion in modVersions:  # type: Distribution.ModVersion
 			versionBuildPath = os.path.join(modBuildPath, modVersion.Version)
 
-			basePath = os.path.relpath(Paths.DownloadsBuildPath, versionBuildPath).replace("\\", "/")  # type: str
+			basePath = os.path.relpath(Paths.DownloadsBuildPath, versionBuildPath).replace("\\", "/") + "/.."  # type: str
 			installerPath = os.path.join(versionBuildPath, "installer/index.html")  # type: str
 			installerURL = modVersion.InstallerURL  # type: str
 			filesPath = os.path.join(versionBuildPath, "files/index.html")  # type: str
@@ -143,7 +143,7 @@ def _BuildModDownloads () -> None:
 		for modVersion in modVersions:  # type: Distribution.ModVersion
 			versionBuildPath = os.path.join(modBuildPath, modVersion.Version, modVersion.ConcealerFolderName)
 
-			basePath = os.path.relpath(Paths.DownloadsBuildPath, versionBuildPath).replace("\\", "/")  # type: str
+			basePath = os.path.relpath(Paths.DownloadsBuildPath, versionBuildPath).replace("\\", "/") + "/.."  # type: str
 			installerPath = os.path.join(versionBuildPath, "installer/index.html")  # type: str
 			installerURL = modVersion.InstallerURL  # type: str
 			filesPath = os.path.join(versionBuildPath, "files/index.html")  # type: str

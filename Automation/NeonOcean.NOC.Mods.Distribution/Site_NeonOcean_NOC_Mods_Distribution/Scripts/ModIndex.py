@@ -2,6 +2,7 @@ import os
 import typing
 from importlib import util
 
+from Site_NeonOcean_NOC_Mods_Distribution.Tools import Formatting
 from Site_NeonOcean_NOC_Mods_Distribution import Paths
 
 class FormattingDict(dict):
@@ -31,18 +32,18 @@ def BuildModIndex (modNamespace: str) -> str:
 
 		versionFormatting["VersionNumber"] = modVersion.Version
 
-		versionFormatting["InstallerLink"] = "mods/" + modNamespace + "/" + modVersion.Version + "/installer"
-		versionFormatting["FilesLink"] =  "mods/" + modNamespace + "/" + modVersion.Version + "/files"
-		versionFormatting["SourcesLink"] =  "mods/" + modNamespace + "/" + modVersion.Version + "/sources"
+		versionFormatting["InstallerLink"] = "mods/" + modNamespace.lower() + "/" + modVersion.Version + "/installer"
+		versionFormatting["FilesLink"] =  "mods/" + modNamespace.lower() + "/" + modVersion.Version + "/files"
+		versionFormatting["SourcesLink"] =  "mods/" + modNamespace.lower() + "/" + modVersion.Version + "/sources"
 
 
 		versionFormatting["GameVersionNumber"] = modVersion.GameVersion
 		versionFormatting["ReleaseDate"] = modVersion.ReleaseDateObject.strftime("%B %d, %Y")
 
 		if modVersionsText == "":
-			modVersionsText = versionTemplate.format_map(versionFormatting)
+			modVersionsText = Formatting.FormatDictionary(versionTemplate, versionFormatting)
 		else:
-			modVersionsText += "\n" + versionTemplate.format_map(versionFormatting)
+			modVersionsText += "\n" + Formatting.FormatDictionary(versionTemplate, versionFormatting)
 
 	return modVersionsText
 

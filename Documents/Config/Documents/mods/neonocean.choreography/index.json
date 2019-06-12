@@ -4,8 +4,6 @@
 	"Values": {
 		"Title": "Choreography - Versions",
 		
-		"BasePath": "../..",
-		
 		"ModName": "Choreography",
 		"ModNamespace": "NeonOcean.Choreography"
 	},

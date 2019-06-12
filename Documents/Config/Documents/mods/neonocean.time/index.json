@@ -4,8 +4,6 @@
 	"Values": {
 		"Title": "Time - Versions",
 		
-		"BasePath": "../..",
-		
 		"ModName": "Time",
 		"ModNamespace": "NeonOcean.Time"
 	},

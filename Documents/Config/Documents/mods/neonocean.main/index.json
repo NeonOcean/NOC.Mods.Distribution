@@ -4,8 +4,6 @@
 	"Values": {
 		"Title": "Main - Versions",
 		
-		"BasePath": "../..",
-		
 		"ModName": "Main",
 		"ModNamespace": "NeonOcean.Main"
 	},

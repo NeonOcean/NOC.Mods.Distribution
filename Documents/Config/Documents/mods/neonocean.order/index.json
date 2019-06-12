@@ -4,8 +4,6 @@
 	"Values": {
 		"Title": "Order - Versions",
 		
-		"BasePath": "../..",
-		
 		"ModName": "Order",
 		"ModNamespace": "NeonOcean.Order"
 	},

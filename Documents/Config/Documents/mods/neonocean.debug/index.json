@@ -4,8 +4,6 @@
 	"Values": {
 		"Title": "Debug - Versions",
 		
-		"BasePath": "../..",
-		
 		"ModName": "Debug",
 		"ModNamespace": "NeonOcean.Debug"
 	},

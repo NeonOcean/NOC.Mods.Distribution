@@ -4,8 +4,6 @@
 	"Values": {
 		"Title": "Cycle - Versions",
 		
-		"BasePath": "../..",
-		
 		"ModName": "Cycle",
 		"ModNamespace": "NeonOcean.Cycle"
 	},

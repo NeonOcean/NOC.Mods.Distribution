@@ -65,6 +65,12 @@ def _ReadDocumentConfig (documentConfigFilePath: str) -> typing.Tuple[str, str]:
 	documentValues = _ReadValues(documentConfig, documentAdditionalValues)  # type: dict
 	documentValues["DocumentPath"] = documentRelativeFilePath
 
+	if documentValues.get("BasePath") is None:
+		documentRelativeFilePathParts = documentRelativeFilePath.split(os.path.sep)  # type: typing.List[str]
+		documentBasePath = "../" * (len(documentRelativeFilePathParts) - 1)
+
+		documentValues["BasePath"] = documentBasePath
+
 	documentText = _ReadDocument(documentValues, documentTemplateConfig["Document"])  # type: str
 
 	return documentFilePath, documentText

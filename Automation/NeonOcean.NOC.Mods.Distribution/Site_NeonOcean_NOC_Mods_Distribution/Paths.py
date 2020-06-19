@@ -21,6 +21,8 @@ PromotionsPath = os.path.join(RootPath, "Promotions")  # type: str
 PromotionsBuildPath = os.path.join(PromotionsPath, "Build")  # type: str
 PromotionsSourcesPath = os.path.join(PromotionsPath, "Promotions")  # type: str
 
+ModsPath = os.path.join(RootPath, "Mods")  # type: str
+
 TemplatesPath = os.path.join(RootPath, "Templates")  # type: str
 
 LoosePath = os.path.join(RootPath, "Loose")  # type: str

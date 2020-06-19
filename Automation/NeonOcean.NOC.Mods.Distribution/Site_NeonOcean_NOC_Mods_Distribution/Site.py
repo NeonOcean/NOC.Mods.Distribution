@@ -4,8 +4,9 @@ from json import decoder
 
 from Site_NeonOcean_NOC_Mods_Distribution import Paths
 
+# noinspection PyTypeChecker
 _site = None  # type: Site
-_siteData = None  # type: typing.Dict[str, typing.Any]
+_siteData = dict()  # type: typing.Dict[str, typing.Any]
 
 class Site:
 	def __init__ (self, informationDictionary: typing.Dict[str, typing.Any]):

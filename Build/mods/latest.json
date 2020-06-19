@@ -1,8 +1,20 @@
 {
+	"NeonOcean.S4.Cycle": {
+		"Release": "1.0.0"
+	},
+	"NeonOcean.S4.Debug": {
+		"Release": "1.3.0"
+	},
 	"NeonOcean.Debug": {
 		"Release": "1.3.0"
 	},
+	"NeonOcean.S4.Main": {
+		"Release": "1.3.0"
+	},
 	"NeonOcean.Main": {
+		"Release": "1.3.0"
+	},
+	"NeonOcean.S4.Order": {
 		"Release": "1.3.0"
 	},
 	"NeonOcean.Order": {

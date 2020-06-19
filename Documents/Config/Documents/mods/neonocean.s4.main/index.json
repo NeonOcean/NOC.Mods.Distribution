@@ -1,0 +1,22 @@
+{
+	"FileExtension": "html",
+
+	"Values": {
+		"Title": "Sims 4 - Main - Versions",
+		
+		"ModName": "Main",
+		"ModNamespace": "NeonOcean.S4.Main"
+	},
+
+	"Scripts": {
+		"Index": {
+			"Module": "Site_NeonOcean_NOC_Mods_Distribution.Scripts.ModIndex",
+			"Function": "BuildModIndex",
+			"Inputs": [
+				"ModNamespace"
+			]
+		}
+	},
+
+	"TemplateConfig": "ModIndex.json"
+}

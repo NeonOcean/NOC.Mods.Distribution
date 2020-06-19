@@ -5,7 +5,7 @@
 	],
 	"TargetsType": "Whitelist",
 	"Mods": [
-		"NeonOcean.Debug"
+		"NeonOcean.S4.Debug"
 	],
 	"ModsType": "Whitelist",
 	"Rating": "Normal",

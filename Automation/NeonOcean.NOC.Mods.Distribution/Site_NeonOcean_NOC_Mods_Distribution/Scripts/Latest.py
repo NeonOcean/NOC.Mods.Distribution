@@ -2,6 +2,8 @@ import typing
 from importlib import util
 from json import encoder
 
+from Site_NeonOcean_NOC_Mods_Distribution import Mods
+
 _showedWarning = False  # type: bool
 
 def GetLatestText () -> str:
@@ -16,22 +18,54 @@ def GetLatestText () -> str:
 	latestDictionary = dict()  # type: typing.Dict[str, typing.Dict[str, str]]
 
 	for releaseNamespace in Distribution.Releases.keys():
+		latestReleaseVersion = GetLatestReleaseVersion(releaseNamespace)  # type: str
+
 		releaseNamespaceDictionary = latestDictionary.get(releaseNamespace)  # type: typing.Dict[str, str]
 
 		if releaseNamespaceDictionary is None:
 			releaseNamespaceDictionary = dict()
 			latestDictionary[releaseNamespace] = releaseNamespaceDictionary
 
-		releaseNamespaceDictionary["Release"] = GetLatestReleaseVersion(releaseNamespace)
+		releaseNamespaceDictionary["Release"] = latestReleaseVersion
+
+		try:
+			releasedMod = Mods.GetModConfig(releaseNamespace)
+		except:
+			continue
+
+		for releaseLegacyNamespace in releasedMod.LegacyNamespaces:  # type: str
+			releaseLegacyNamespaceDictionary = latestDictionary.get(releaseLegacyNamespace)  # type: typing.Dict[str, str]
+
+			if releaseLegacyNamespaceDictionary is None:
+				releaseLegacyNamespaceDictionary = dict()
+				latestDictionary[releaseLegacyNamespace] = releaseLegacyNamespaceDictionary
+
+			releaseLegacyNamespaceDictionary["Release"] = latestReleaseVersion
 
 	for previewNamespace in Distribution.Previews.keys():
+		latestPreviewVersion = GetLatestPreviewVersion(previewNamespace)  # type: str
+
 		previewNamespaceDictionary = latestDictionary.get(previewNamespace)  # type: typing.Dict[str, str]
 
 		if previewNamespaceDictionary is None:
 			previewNamespaceDictionary = dict()
 			latestDictionary[previewNamespace] = previewNamespaceDictionary
 
-		previewNamespaceDictionary["Preview"] = GetLatestPreviewVersion(previewNamespace)
+		previewNamespaceDictionary["Preview"] = latestPreviewVersion
+
+		try:
+			previewedMod = Mods.GetModConfig(previewNamespace)
+		except:
+			continue
+
+		for previewLegacyNamespace in previewedMod.LegacyNamespaces:  # type: str
+			previewLegacyNamespaceDictionary = latestDictionary.get(previewLegacyNamespace)  # type: typing.Dict[str, str]
+
+			if previewLegacyNamespaceDictionary is None:
+				previewLegacyNamespaceDictionary = dict()
+				latestDictionary[previewLegacyNamespace] = previewLegacyNamespaceDictionary
+
+			previewLegacyNamespaceDictionary["Preview"] = latestPreviewVersion
 
 	return encoder.JSONEncoder(indent = "\t").encode(latestDictionary)
 

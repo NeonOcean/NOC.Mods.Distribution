@@ -1,0 +1,7 @@
+{
+	"Namespace": "NeonOcean.S4.Debug",
+	"LegacyNamespaces": [
+		"NeonOcean.Debug"
+	],
+	"GameIdentifier": "s4"
+}

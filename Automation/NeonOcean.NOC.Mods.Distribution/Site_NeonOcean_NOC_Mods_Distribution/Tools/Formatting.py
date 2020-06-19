@@ -4,23 +4,23 @@ def Format (template: str, **kwargs) -> str:
 	return FormatDictionary(template, kwargs)
 
 def FormatDictionary (template: str, formattingDictionary: typing.Dict[str, str]) -> str:
-	formatedTemplate = template  # type: str
+	formattedTemplate = template  # type: str
 
 	for formattingKey, formattingString in formattingDictionary.items():  # type: str, str
 		formattingKeyIdentifier = "{<-" + formattingKey + "->}"  # type: str
 		formattingKeyIdentifierLength = len(formattingKeyIdentifier)  # type: int
 
-		formattingIndexes = _GetAllIndexes(formatedTemplate, "{<-" + formattingKey + "->}")  # type: typing.List[int]
+		formattingIndexes = _GetAllIndexes(formattedTemplate, "{<-" + formattingKey + "->}")  # type: typing.List[int]
 
 		while len(formattingIndexes) != 0:
 			currentFormattingIndex = formattingIndexes[0]  # type: int
 			formattingIndexes.pop(0)
 
-			formattingIndentation = _PreviousWhitespaces(formatedTemplate, currentFormattingIndex)  # type: str
+			formattingIndentation = _PreviousWhitespaces(formattedTemplate, currentFormattingIndex)  # type: str
 			formattingStringIndented = formattingString.replace("\n", "\n" + formattingIndentation)  # type: str
 			formattingStringIndentedLength = len(formattingStringIndented)  # type: int
 
-			formatedTemplate = formatedTemplate[: currentFormattingIndex] + formattingStringIndented + formatedTemplate[currentFormattingIndex + formattingKeyIdentifierLength: ]
+			formattedTemplate = formattedTemplate[: currentFormattingIndex] + formattingStringIndented + formattedTemplate[currentFormattingIndex + formattingKeyIdentifierLength: ]
 
 			formattingIndexesLength = len(formattingIndexes)  # type: int
 			formattingIndexIndex = 0  # type: int
@@ -31,7 +31,7 @@ def FormatDictionary (template: str, formattingDictionary: typing.Dict[str, str]
 
 				formattingIndexIndex += 1
 
-	return formatedTemplate
+	return formattedTemplate
 
 def _GetAllIndexes (targetString: str, subString: str) -> typing.List[int]:
 	targetStringLength = len(targetString)

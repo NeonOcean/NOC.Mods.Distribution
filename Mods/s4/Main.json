@@ -1,0 +1,7 @@
+{
+	"Namespace": "NeonOcean.S4.Main",
+	"LegacyNamespaces": [
+		"NeonOcean.Main"
+	],
+	"GameIdentifier": "s4"
+}

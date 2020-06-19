@@ -1,9 +1,7 @@
 {
 	"FileExtension": "json",
 	
-	"Values": {
-		"ModNamespace": "NeonOcean.Main"
-	},
+	"Values": {},
 
 	"Scripts": {
 		"Content": {

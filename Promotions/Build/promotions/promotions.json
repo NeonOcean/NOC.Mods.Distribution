@@ -1,1 +1,22 @@
-[]
+[
+	{
+		"Identifier": "2a04043c-a5b1-4265-b88e-d26a8079ad60",
+		"Targets": [
+			"S4"
+		],
+		"TargetsType": "Whitelist",
+		"Mods": [
+			"NeonOcean.S4.Choreography",
+			"NeonOcean.S4.Cycle",
+			"NeonOcean.S4.Debug",
+			"NeonOcean.S4.Order",
+			"NeonOcean.S4.Time"
+		],
+		"ModsType": "Blacklist",
+		"Rating": "Normal",
+		"Link": "https://www.google.com",
+		"S4Title": "A Message From NeonOcean",
+		"S4Text": "If your seeing this message its probably because recently downloaded my mod: Cycle.\n\nExcept you didn't.\n\nContrary to my instructions you only downloaded Cycle's required toolkit. I thought I said you needed to download both but I guess I wasn't clear enough for about 40% of you. Come back and download the actual mod you numbskull.",
+		"S4LinkButton": "Download Cycle"
+	}
+]

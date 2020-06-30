@@ -78,20 +78,20 @@ def _BuildModDownloads () -> None:
 		latestSourcesURL = modLatestVersion.SourcesURL  # type: str
 
 		_WriteDownload(latestInstallerPath, modInstallerTemplate, latestBasePath,
-					   modName, modLatestVersion.Version, _typeInstaller, modLatestVersion.GameVersion, modLatestVersion.ReleaseDate,
+					   modName, str(modLatestVersion.Version), _typeInstaller, str(modLatestVersion.GameVersion), modLatestVersion.ReleaseDate,
 					   latestFilesRelativePath, licensePath, latestInstallerURL)
 
 		_WriteDownload(latestFilesPath, modFilesTemplate, latestBasePath,
-					   modName, modLatestVersion.Version, _typeFiles, modLatestVersion.GameVersion, modLatestVersion.ReleaseDate,
+					   modName, str(modLatestVersion.Version), _typeFiles, str(modLatestVersion.GameVersion), modLatestVersion.ReleaseDate,
 					   latestFilesRelativePath, licensePath, latestFilesURL)
 
 
 		_WriteDownload(latestSourcesPath, sourcesTemplate, latestBasePath,
-					   modName, modLatestVersion.Version, _typeSources, modLatestVersion.GameVersion, modLatestVersion.ReleaseDate,
+					   modName, str(modLatestVersion.Version), _typeSources, str(modLatestVersion.GameVersion), modLatestVersion.ReleaseDate,
 					   latestFilesRelativePath, licensePath, latestSourcesURL)
 
 		for modVersion in modVersions:  # type: Distribution.ModVersion
-			versionBuildPath = os.path.join(modBuildPath, modVersion.Version)
+			versionBuildPath = os.path.join(modBuildPath, str(modVersion.Version))
 
 			basePath = os.path.relpath(Paths.DownloadsBuildPath, versionBuildPath).replace("\\", "/") + "/.."  # type: str
 			installerPath = os.path.join(versionBuildPath, "installer/index.html")  # type: str
@@ -103,17 +103,17 @@ def _BuildModDownloads () -> None:
 			sourcesURL = modVersion.SourcesURL  # type: str
 
 			_WriteDownload(installerPath, modInstallerTemplate, basePath,
-						   modName, modVersion.Version, _typeInstaller, modLatestVersion.GameVersion, modLatestVersion.ReleaseDate,
+						   modName, str(modVersion.Version), _typeInstaller, str(modLatestVersion.GameVersion), modLatestVersion.ReleaseDate,
 						   filesRelativePath, licensePath, installerURL)
 
 
 			_WriteDownload(filesPath, modFilesTemplate, basePath,
-						   modName, modVersion.Version, _typeFiles, modVersion.GameVersion, modVersion.ReleaseDate,
+						   modName, str(modVersion.Version), _typeFiles, str(modVersion.GameVersion), modVersion.ReleaseDate,
 						   filesRelativePath, licensePath, filesURL)
 
 
 			_WriteDownload(sourcesPath, sourcesTemplate, basePath,
-						   modName, modVersion.Version, _typeSources, modVersion.GameVersion, modVersion.ReleaseDate,
+						   modName, str(modVersion.Version), _typeSources, str(modVersion.GameVersion), modVersion.ReleaseDate,
 						   filesRelativePath, licensePath, sourcesURL)
 
 	for modNamespace, modVersions in Distribution.Previews.items():  # type: str, typing.List[Distribution.ModVersion]
@@ -141,7 +141,7 @@ def _BuildModDownloads () -> None:
 		modName = mod.GetName()  # type: typing.Optional[str]
 
 		for modVersion in modVersions:  # type: Distribution.ModVersion
-			versionBuildPath = os.path.join(modBuildPath, modVersion.Version, modVersion.ConcealerFolderName)
+			versionBuildPath = os.path.join(modBuildPath, str(modVersion.Version), modVersion.ConcealerFolderName)
 
 			basePath = os.path.relpath(Paths.DownloadsBuildPath, versionBuildPath).replace("\\", "/") + "/.."  # type: str
 			installerPath = os.path.join(versionBuildPath, "installer/index.html")  # type: str
@@ -153,17 +153,17 @@ def _BuildModDownloads () -> None:
 			sourcesURL = modVersion.SourcesURL  # type: str
 
 			_WriteDownload(installerPath, modInstallerTemplate, basePath,
-						   modName, modVersion.Version, _typeFiles, modVersion.GameVersion, modVersion.ReleaseDate,
+						   modName, str(modVersion.Version), _typeFiles, str(modVersion.GameVersion), modVersion.ReleaseDate,
 						   filesRelativePath, licensePath, installerURL)
 
 
 			_WriteDownload(filesPath, modFilesTemplate, basePath,
-						   modName, modVersion.Version, _typeFiles, modVersion.GameVersion, modVersion.ReleaseDate,
+						   modName, str(modVersion.Version), _typeFiles, str(modVersion.GameVersion), modVersion.ReleaseDate,
 						   filesRelativePath, licensePath, filesURL)
 
 
 			_WriteDownload(sourcesPath, sourcesTemplate, basePath,
-						   modName, modVersion.Version, _typeSources, modVersion.GameVersion, modVersion.ReleaseDate,
+						   modName, str(modVersion.Version), _typeSources, str(modVersion.GameVersion), modVersion.ReleaseDate,
 						   filesRelativePath, licensePath, sourcesURL)
 
 def _WriteDownload (writeFilePath: str, template: str, basePath: str,

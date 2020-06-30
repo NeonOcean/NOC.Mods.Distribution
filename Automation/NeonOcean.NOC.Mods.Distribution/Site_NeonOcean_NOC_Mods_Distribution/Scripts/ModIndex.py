@@ -30,14 +30,14 @@ def BuildModIndex (modNamespace: str) -> str:
 	for modVersion in modVersions:  # type: Distribution.ModVersion
 		versionFormatting = FormattingDict()  # type: typing.Dict[str, typing.Any]
 
-		versionFormatting["VersionNumber"] = modVersion.Version
+		versionFormatting["VersionNumber"] = str(modVersion.Version)
 
-		versionFormatting["InstallerLink"] = "mods/" + modNamespace.lower() + "/" + modVersion.Version + "/installer"
-		versionFormatting["FilesLink"] =  "mods/" + modNamespace.lower() + "/" + modVersion.Version + "/files"
-		versionFormatting["SourcesLink"] =  "mods/" + modNamespace.lower() + "/" + modVersion.Version + "/sources"
+		versionFormatting["InstallerLink"] = "mods/" + modNamespace.lower() + "/" + str(modVersion.Version) + "/installer"
+		versionFormatting["FilesLink"] =  "mods/" + modNamespace.lower() + "/" + str(modVersion.Version) + "/files"
+		versionFormatting["SourcesLink"] =  "mods/" + modNamespace.lower() + "/" + str(modVersion.Version) + "/sources"
 
 
-		versionFormatting["GameVersionNumber"] = modVersion.GameVersion
+		versionFormatting["GameVersionNumber"] = str(modVersion.GameVersion)
 		versionFormatting["ReleaseDate"] = modVersion.ReleaseDateObject.strftime("%B %d, %Y")
 
 		if modVersionsText == "":

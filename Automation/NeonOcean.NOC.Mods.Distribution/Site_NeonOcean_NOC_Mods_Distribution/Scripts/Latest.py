@@ -97,7 +97,7 @@ def GetLatestReleaseVersion (namespace: str) -> str:
 	if latestVersion is None:
 		return ""
 
-	return latestVersion.Version
+	return str(latestVersion.Version)
 
 def GetLatestPreviewVersion (namespace: str) -> str:
 	latestVersion = GetLatestPreview(namespace)
@@ -105,4 +105,4 @@ def GetLatestPreviewVersion (namespace: str) -> str:
 	if latestVersion is None:
 		return ""
 
-	return latestVersion.Version
+	return str(latestVersion.Version)

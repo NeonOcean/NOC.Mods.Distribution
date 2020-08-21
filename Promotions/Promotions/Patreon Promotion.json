@@ -1,0 +1,18 @@
+{
+	"Identifier": "2fd2e88e-7114-4af9-b716-154d590d0a7a",
+	"Targets": [ 
+		"S4"
+	],
+	"TargetsType": "Whitelist",
+	"Mods": [
+		"NeonOcean.S4.Cycle",
+		"NeonOcean.S4.Refer"
+	],
+	"ModsType": "Whitelist",
+	"Rating": "Normal",
+	"Link": "https://www.patreon.com/NeonOcean",
+	"WaitFor": 300,
+	"S4Title": "Support NeonOcean",
+	"S4Text": "NeonOcean is reliant on people like you to not starve, and also, to continue working on and improve her mods. You will also get some nice stuff from helping out, such as early access to new versions.",
+	"S4LinkButton": "Support NeonOcean"
+}
